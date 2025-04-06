@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Ask for hours worked 
+// Read and store input 
+
+// Ask for hourly wage 
+// Read and store input 
+
+// Calculate total pay 
+
+// Display total pay
+
