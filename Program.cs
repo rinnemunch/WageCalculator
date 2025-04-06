@@ -8,3 +8,12 @@
 
 // Display total pay
 
+Console.Write("Hours worked: ");
+double hours = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Hourly wage: ");
+double wage = Convert.ToDouble(Console.ReadLine());
+
+double totalPay = hours * wage;
+
+Console.WriteLine($"Total pay: ${totalPay:F2}");
