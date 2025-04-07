@@ -41,15 +41,16 @@ double wage = Convert.ToDouble(Console.ReadLine());
 
 double totalPay;
 
-if (hours <= 40)
+if (hours <= overtimeThreshold)
 {
+    //just the regular pay
     totalPay = hours * wage;
 }
 else
 {
-    double regularPay = wage * 40;
-    double overtimeHours = hours - 40;
-    double overtimePay = wage * overtimeHours * 1.5;
+    double regularPay = overtimeThreshold * 40;
+    double overtimeHours = hours - overtimeThreshold;
+    double overtimePay = overtimeHours * wage * 1.5;
     totalPay = regularPay + overtimePay;
 }
 
