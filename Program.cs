@@ -45,13 +45,17 @@ if (hours <= overtimeThreshold)
 {
     //just the regular pay
     totalPay = hours * wage;
+    Console.WriteLine($"Regular pay: ${totalPay:F2}");
 }
 else
 {
-    double regularPay = overtimeThreshold * 40;
+    double regularPay = overtimeThreshold * wage;
     double overtimeHours = hours - overtimeThreshold;
     double overtimePay = overtimeHours * wage * 1.5;
     totalPay = regularPay + overtimePay;
+
+    Console.WriteLine($"Regular pay: ${totalPay:F2}");
+    Console.WriteLine($"Overtime pay: ${overtimePay:F2}");
 }
 
 Console.WriteLine($"Total pay: ${totalPay:F2}");
