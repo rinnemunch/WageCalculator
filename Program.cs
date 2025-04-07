@@ -1,21 +1,44 @@
-﻿// Ask for hours worked 
-// Read and store input 
+﻿Console.Write("Enter your pay period (daily/weekly/biweekly/monthly): ");
+string? input = Console.ReadLine();
 
-// Ask for hourly wage 
-// Read and store input 
+if (string.IsNullOrWhiteSpace(input))
+{
+    Console.WriteLine("No input given. Defaulting to 'weekly'. ");
+    input = "weekly"; 
+} 
 
-// Calculate total pay 
+string period = input.ToLower();
 
-// Display total pay
+//setting overtime threshold; 
+double overtimeThreshold;
 
-Console.Write("Hours worked: ");
+
+switch (period)
+{
+    case "daily":
+        overtimeThreshold = 8;
+        break;
+    case "weekly":
+        overtimeThreshold = 40;
+        break;
+    case "biweekly":
+        overtimeThreshold = 80;
+        break;
+    case "monthly":
+        overtimeThreshold = 160;
+        break;
+    default:
+        Console.WriteLine("Invalid pay period entered. Using weekly by default.");
+        overtimeThreshold = 40;
+        break;
+}
+
 double hours = Convert.ToDouble(Console.ReadLine());
 
 Console.Write("Hourly wage: ");
 double wage = Convert.ToDouble(Console.ReadLine());
 
-double totalPay; 
-//overtime pay * 1.5 
+double totalPay;
 
 if (hours <= 40)
 {
@@ -23,10 +46,11 @@ if (hours <= 40)
 }
 else
 {
-    double regularPay = 40 * wage;
-    double overtimehours = hours - 40;
-    double overtimePay = overtimehours * wage * 1.5;
+    double regularPay = wage * 40;
+    double overtimeHours = hours - 40;
+    double overtimePay = wage * overtimeHours * 1.5;
     totalPay = regularPay + overtimePay;
 }
 
-    Console.WriteLine($"Total pay: ${totalPay:F2}");
+Console.WriteLine($"Total pay: ${totalPay:F2}");
+
