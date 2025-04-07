@@ -33,9 +33,10 @@ switch (period)
         break;
 }
 
+Console.Write("Enter hours worked: ");
 double hours = Convert.ToDouble(Console.ReadLine());
 
-Console.Write("Hourly wage: ");
+Console.Write("Enter hourly wage: ");
 double wage = Convert.ToDouble(Console.ReadLine());
 
 double totalPay;
