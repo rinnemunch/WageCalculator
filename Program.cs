@@ -54,7 +54,7 @@ else
     double overtimePay = overtimeHours * wage * 1.5;
     totalPay = regularPay + overtimePay;
 
-    Console.WriteLine($"Regular pay: ${totalPay:F2}");
+    Console.WriteLine($"Regular pay: ${regularPay:F2}");
     Console.WriteLine($"Overtime pay: ${overtimePay:F2}");
 }
 
