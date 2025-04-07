@@ -24,9 +24,9 @@ if (hours <= 40)
 else
 {
     double regularPay = 40 * wage;
-    double overtimeHours = hours - 40;
-    double overtimePay = overtimeHours * wage * 1.5;
-    totalPay = regularPay + overtimePay; 
+    double overtimehours = hours - 40;
+    double overtimePay = overtimehours * wage * 1.5;
+    totalPay = regularPay + overtimePay;
 }
 
     Console.WriteLine($"Total pay: ${totalPay:F2}");
