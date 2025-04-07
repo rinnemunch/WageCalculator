@@ -14,6 +14,19 @@ double hours = Convert.ToDouble(Console.ReadLine());
 Console.Write("Hourly wage: ");
 double wage = Convert.ToDouble(Console.ReadLine());
 
-double totalPay = hours * wage;
+double totalPay; 
+//overtime pay * 1.5 
 
-Console.WriteLine($"Total pay: ${totalPay:F2}");
+if (hours <= 40)
+{
+    totalPay = hours * wage;
+}
+else
+{
+    double regularPay = 40 * wage;
+    double overtimeHours = hours - 40;
+    double overtimePay = overtimeHours * wage * 1.5;
+    totalPay = regularPay + overtimePay; 
+}
+
+    Console.WriteLine($"Total pay: ${totalPay:F2}");
